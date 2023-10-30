@@ -126,31 +126,33 @@
                             <h4>CONTACT US</h4>
                             <h1>Contact Information</h1>
                         </div>
-                        <form action="https://formspree.io/f/myyleorq" method="POST" id="dreamit-form">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form_box mb-30">
-                                        <input type="text" placeholder="Full Name*">
-                                        <i class="bi bi-person"></i>
-                                    </div>
+                        <form action="{{ route('message') }}" method="POST" id="dreamit-form">
+                            @csrf
+                            <div class="col-lg-12">
+                                <div class="form_box mb-20">
+                                    <input type="text" name="name" placeholder="Votre Nom:">
+                                    <i class="bi bi-person"></i>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form_box mb-30">
-                                        <input type="text" placeholder="Enter E-Mail">
-                                        <i class="bi bi-envelope"></i>
-                                    </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form_box mb-20">
+                                    <input type="email" name="email" placeholder="Email:">
+                                    <i class="bi bi-envelope"></i>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="from-box">
-                                        <textarea name="massage" id="massage" cols="30" rows="10"
-                                            placeholder="Write Comment ..."></textarea>
-                                    </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form_box mb-20">
+                                    <input type="number" name="phone" placeholder="Votre Numéro:">
+                                    <i class="bi bi-phone"></i>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="contact-form text-center">
-                                        <button type="submit"> <i class="bi bi-envelope"></i> Send Message </button>
-                                    </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form_box mb-15">
+                                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre Message"></textarea>
                                 </div>
+                            </div>
+                            <div class="quote_form">
+                                <button type="submit"> <i class="bi bi-envelope"></i> Envoyer </button>
                             </div>
                         </form>
                         <div id="status"></div>
